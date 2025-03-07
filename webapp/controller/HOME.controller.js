@@ -64,7 +64,7 @@ sap.ui.define([
 				oInput.resetProperty("value");
 				return;
 			}
-
+ 
 			oInput.setValue(oSelectedItem.getTitle());
 		}        
     });
