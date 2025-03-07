@@ -1,0 +1,70 @@
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:core="sap.ui.core" 
+xmlns:f="sap.ui.layout.form" 
+controllerName="com.sap.northwind.controller.HOME" displayBlock="true">
+
+    <Page id="page" title="{i18n>title}" class="sapUiContentPadding" >
+    <content>
+		<f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1" >
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="{i18n>SimpleForm}"/>
+					<ToolbarSpacer id="_IDGenToolbarSpacer" />
+					<Button id="_IDGenButton1" text="{i18n>Edit}" type="Emphasized" icon="sap-icon://edit"
+							press="onPress" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+					</Button>
+                    <Button id="_IDGenButton2"  text="{i18n>Save}" type="Accept" icon="sap-icon://save" press="saveFunc"/>
+					<Button id="_IDGenButton20" type="Emphasized" text="Emphasized" press="custFunc" />
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Label id="_IDGenLabel1" text="{i18n>CompanyName}" class="customCSS" required="true"/>
+				<Input id="custName" value="{SupplierName}" placeholder="{i18n>CustName}" required="true"/>
+				<Label id="_IDGenLabel2" text="{i18n>ContactName}" required="true" />
+				<Input id="street" value="{Street}" />
+                <Label id="_IDGenLabel3" text="{i18n>CustomerID}" />                
+                <Input id="_IDGenInput3" maxLength="5" value="{Street}" showValueHelp="true" valueHelpRequest="f4HelpForCustId"/> <!-- //type="Password" -->
+				<Label id="_IDGenLabel4" text="{i18n>ContactTitle}" />
+                <ComboBox id="_IDGenComboBox1" items="">
+                    <core:Item id="_IDGenItem1" key="S" text="{i18n>SalesRep}" />
+                    <core:Item id="_IDGenItem2" key="O" text="{i18n>Owner}" />
+                    <core:Item id="_IDGenItem3" key="A" text="{i18n>OwnerAdm}" /> 
+                </ComboBox>
+			</f:content>
+		</f:SimpleForm>
+                    <List id="_IDGenList1"
+                        items="{oJsonForView>/}"
+                        headerText="Orders">
+                        <ObjectListItem id="_IDGenObjectListItem"
+                            title="{oJsonForView>ShipName}"
+                            type="Active"
+                            press="onListItemPress"
+                            number="{oJsonForView>OrderID}">
+                            <ObjectAttribute id="_IDGenObjectAttribute" text="{oJsonForView>ShipAddress}" />
+                            <ObjectAttribute id="_IDGenObjectAttribute1" text="{oJsonForView>ShipCity},{oJsonForView>ShipCountry},{oJsonForView>ShipPostalCode}" />
+                            <ObjectAttribute id="_IDGenObjectAttribute2" text="{oJsonForView>ShippedDate}" />
+                        </ObjectListItem>
+                    </List>              
+
+    </content>
+    </Page>
+</mvc:View> 

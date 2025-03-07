@@ -1,0 +1,37 @@
+/* Enter your custom styles here */
+/* .Label{
+    color: blue;
+    background-color: brown;
+    font-weight: 100;
+} */
+
+.sapMLabel {
+    color: #22915f;
+    font-size: .875rem;
+    font-family: var(--sapFontFamily);
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.customCSS.sapMLabel {
+    color: #912263;
+    font-size: .875rem;
+    font-family: var(--sapFontFamily);
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sapMBarPH {
+    height: 2.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background: repeating-linear-gradient(45deg, black, transparent 100px);
+}

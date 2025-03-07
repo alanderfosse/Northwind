@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog id="_IDGenSelectDialog1"
+		noDataText="No Customers ID Found"
+		title="Select Customers ID"
+		search=".onSearch"
+		searchPlaceholder="Search Customers ID"
+		confirm=".onValueHelpDialogClose"
+		cancel=".onValueHelpDialogClose"
+		showClearButton="true"
+		items="{oJsonForView>/}">
+            <ObjectListItem id="_IDGenObjectListItem1" 
+                            title="{oJsonForView>CustomerID}" >
+                        <!--    type="Active"
+                            press="onListItemPress"
+                            number="{oJsonForView>OrderID}">
+                <ObjectAttribute id="_IDGenObjectAttribute" text="{oJsonForView>ShipAddress}" />
+                <ObjectAttribute id="_IDGenObjectAttribute1" text="{oJsonForView>ShipCity},{oJsonForView>ShipCountry},{oJsonForView>ShipPostalCode}" />
+                <ObjectAttribute id="_IDGenObjectAttribute2" text="{oJsonForView>ShippedDate}" /> -->
+            </ObjectListItem>
+	</SelectDialog>
+</core:FragmentDefinition>
